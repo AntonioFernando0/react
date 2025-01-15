@@ -38,4 +38,12 @@ let novaPessoa = {
     anoAtual: 2018,
     cidade: "Valença-ba"
 }
+// Rest operator
 
+function minhaLista (...nomes) {
+
+    console.log(nomes)
+
+}
+
+minhaListas("Matheus", "Lucas", "João")
