@@ -1,27 +1,46 @@
 // Importação do React e do componente base 'Component' da biblioteca React
 import React, { Component } from "react";
 
-function App(){
-  return(
+class App extends Component {
+    constructor(props){
+      super(props)
+      this.state = {
+        hora: "00:00:00"
+      }
 
-    <div>
-    
-    <Completo Nome = "Antonio" Idade = {25} cargo = "Desenvolvedor" />
-    
-    </div>
-  )
+    }
+
+    componentDidMount(){
+
+      setInterval(() => {
+        this.setState({
+          hora: new Date().toLocaleTimeString()
+        })
+
+      }, 1000 )
+
+
+    }
+
+  render(){
+    return(
+
+      <div>
+        <h1>
+          Meu projeto {this.state.hora}
+
+
+        </h1>
+      </div>
+
+
+    )
+
+  }
+
+
+
 }
 
-function Completo(props) {
-
-  return(
-    <div>
-    <h1>Cadastro Completo</h1>
-    <p>Nome: {props.Nome}</p>
-    <p>Idade: {props.Idade}</p>
-    <p>Cargo: {props.cargo}</p>
-  </div>
-  )
-}
 // Exporta o componente 'App' para ser usado em outros arquivos
 export default App;
