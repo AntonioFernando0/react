@@ -1,46 +1,28 @@
 // Importação do React e do componente base 'Component' da biblioteca React
-import React, { Component } from "react";
+import React, { Component } from "react"; 
+import Membro from './components/Membro/Membro';
 
-class App extends Component {
-    constructor(props){
-      super(props)
-      this.state = {
-        hora: "00:00:00"
-      }
-
-    }
-
-    componentDidMount(){
-
-      setInterval(() => {
-        this.setState({
-          hora: new Date().toLocaleTimeString()
-        })
-
-      }, 1000 )
-
-
-    }
+class App extends Component{
 
   render(){
     return(
 
       <div>
+
         <h1>
-          Meu projeto {this.state.hora}
-
-
+            <Membro nome = "João" />
         </h1>
+
       </div>
 
 
     )
-
   }
 
 
 
 }
 
-// Exporta o componente 'App' para ser usado em outros arquivos
+// Exporta o componente 'App' para que ele possa ser utilizado em outros arquivos do projeto
 export default App;
+
