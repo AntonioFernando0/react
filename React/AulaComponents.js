@@ -1,4 +1,4 @@
-import {Component} from "react";
+// import {Component} from "react"; */ Isso é somente para gravas as aulas
 
 
 class Membro extends Component{

@@ -10,7 +10,7 @@ class App extends Component{
       <div>
 
         <h1>
-            <Membro nome = "João" />
+            <Membro nome = "Matheus" />
         </h1>
 
       </div>
