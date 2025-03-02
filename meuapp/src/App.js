@@ -7,52 +7,36 @@ class App extends Component{
   constructor(props){
     super(props);
     this.state = {
-      status: true
+     feed : [
+
+      { id:1, username: 'Matheus', curtidas: 10, comentarios:2},
+      { id:2, username: 'Pedro', curtidas: 30, comentarios:163},
+      { id:3, username: 'João', curtidas: 15, comentarios:50}
+
+     ]
 
     }
-    this.entrar = this.entrar.bind(this)
-    this.sair = this.sair.bind(this)
-
+ 
   }
 
-  entrar(){
-
-    this.setState({status: true})
-  }
-
-  sair(){
-
-    this.setState({status: false})
-  }
 
   render(){
     return(
 
       <div>
 
-          {this.state.status ? 
-          <div>
+        {this.state.feed.map((item)=> {
+          return(
+            <div> 
+            <h3>
+              {item.id}
 
-            <h2> Bem vindo ao sistema</h2>
-            <button onClick={this.sair}>
+            </h3>
+            </div>
+          )
+        })}
+          
 
-                  Login
-            </button>
-
-          </div> : 
-          <div> 
-              <h2>
-                Olá visitante, faça o login!
-              </h2>
-            <button onClick={this.entrar}> Entrar no sistema</button>
-            
-             </div>
-            }
-          
-          
-          
-          
-            
            
 
       </div>
