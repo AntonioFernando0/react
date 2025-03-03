@@ -1,65 +1,64 @@
-import React, { Component } from "react";
+// Importação do React e do componente base 'Component' da biblioteca React
+import React, { Component } from "react"; 
+import Membro from './components/Membro/Membro';
 
 class App extends Component {
-  constructor(props) {
+
+  constructor(props){
     super(props);
     this.state = {
-      email: '',
-      senha: '',
-      nome: ''
-    };
-    this.cadastrar = this.cadastrar.bind(this);
+      
+      form:{
+
+        nome: 'Matheus',
+        email: 'matheus@sujeito.com',
+        senha: '123',
+        sexo: 'Masculino'
+      }
+    }
+
+    this.dadosForm = this.dadosForm.bind(this)
+   
   }
 
-    cadastrar(event){
-     const {nome, email, senha} = this.state;
+  dadosForm(e){
+    let form = this.state.form;
 
-     if(nome !== '' && email !== '' && senha !== ''){
-      alert(`Nome: ${nome} \n Email: ${email} \n Senha: ${senha}`)
-     }
+    form[e.target.name] = e.target.value
+    this.setState({form: form});
+  }
 
-    
+  
 
-     event.preventDefault()
-    }
- 
-  render() {
-    return (
+  render(){
+
+    return(
+
       <div>
-       <h1>
-          Novo usuario
 
-       </h1>
+         <h2>Login</h2>
+          Nome: 
+          <input type="text" name="nome" value = {this.state.form.nome} onChange={this.dadosForm}> 
+          
+          </input>
+          Email  : 
+          <input  type = "text" name = "email" value = {this.state.form.email} 
+            onChange={this.dadosForm}
+          > 
+          </input>
+         <br/>
+          Senha : <input type = "password" name = "senha" value= {this.state.form.senha} onChange={this.dadosForm} ></input>
+          <br/>
 
-       <form onSubmit={this.cadastrar}>
+          Sexo: 
+          <select name ="sexo" value={this.state.form.sexo} onChange={this.dadosForm}>
+            <option value="masculino"> Masculino</option>
+            <option value="Feminino"> Feminino</option>
+          </select>
 
-        <label> Nome:</label>
-        <input type="text" value={this.state.nome}
-        onChange={(e) => this.setState ({ nome: e.target.value})} 
-        ></input> <br/>
-        <label> Email:</label>
-        <input type="text" value={this.state.email}
-        onChange={(e) => this.setState ({ email: e.target.value})} 
-        ></input> <br/>
-        <label> Senha:</label>
-        <input type="password" value={this.state.senha}
-        onChange={(e) => this.setState ({ senha: e.target.value})} 
-        ></input> <br/>
-
-        <button type="submit"  >
-            Cadastrar
-        </button>
-
-
-
-
-
-       </form>
-
-       
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
