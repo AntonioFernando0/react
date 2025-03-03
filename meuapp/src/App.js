@@ -10,8 +10,10 @@ class App extends Component{
      feed : [
 
       { id:1, username: 'Matheus', curtidas: 10, comentarios:2},
+      
       { id:2, username: 'Pedro', curtidas: 30, comentarios:163},
-      { id:3, username: 'João', curtidas: 15, comentarios:50}
+      { id:3, username: 'João', curtidas: 15, comentarios:50},
+      { id:4, username: 'Rodrigo', curtidas: 2, comentarios:0}
 
      ]
 
@@ -24,18 +26,22 @@ class App extends Component{
     return(
 
       <div>
-
-        {this.state.feed.map((item)=> {
+          
+        {this.state.feed.map((item)=>{
           return(
-            <div> 
+            <div > 
             <h3>
-              {item.id}
+              <Membro id= {item.id}  username = {item.username} curtidas = {item.curtidas} comentarios = {item.comentarios} /> 
 
             </h3>
+
+            
             </div>
           )
         })}
-          
+        
+              
+        
 
            
 

@@ -3,44 +3,24 @@ import {Component} from "react";
 
 class Membro extends Component{
 
-    constructor(props){
-        super(props);
-        this.state = {
-            // Aqui é o lugar aonde posso colocar meus parametros
-            nome: 'Matheus'
-        }
-
-        this.entrar = this.entrar.bind(this)
-        this.sair = this.sair.bind(this)
-    }
-    entrar(){
-        this.setState({nome: 'Jão'})
-    }
-    sair(){
-        this.setState({nome: 'Matheus'})
-    }
-
     render(){
-        return(
 
-            <div>
-                <h1>
-                    Bem vindo a aula, {this.state.nome}
-                </h1>
-            <button onClick={this.entrar}>
-                MUDAR
-            </button>
-            <button onClick={this.sair}>
-                SAIR 
-            </button>
+        return(
+            <div key = {this.props.id}>
+                <h3>
+                    <hr/>
+                    
+                    {this.props.username + ' ' } 
+                    </h3>
+                    <a>{this.props.curtidas > 1 ? this.props.curtidas + ' curtidas ' : this.props.curtidas + ' curtida' }  / { ' '}
+                        
+                    { this.props.comentarios > 1 ?this.props.comentarios + ' comentarios ' : this.props.comentarios + ' comentario '} </a>
+                
 
             </div>
         )
     }
-
 }
-
-
 
 
 

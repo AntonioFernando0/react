@@ -38,7 +38,7 @@ class App extends Component{
                   Login
             </button>
 
-          </div> : 
+          </div> :  // isso é uma condição : 
           <div> 
               <h2>
                 Olá visitante, faça o login!
