@@ -1,64 +1,36 @@
 // Importação do React e do componente base 'Component' da biblioteca React
-import React, { Component } from "react"; 
-import Membro from './components/Membro/Membro';
+import React, {useState} from "react"; 
 
-class App extends Component {
+function App(){
 
-  constructor(props){
-    super(props);
-    this.state = {
-      
-      form:{
+  const [tarefas, setTarefas ] = useState([
 
-        nome: 'Matheus',
-        email: 'matheus@sujeito.com',
-        senha: '123',
-        sexo: 'Masculino'
-      }
-    }
+    'Pagar a conta de luz',
+    'Estudar React Hooks'
+  ])
+  const [input, setInput] = useState(' ')
 
-    this.dadosForm = this.dadosForm.bind(this)
-   
+  function handleAdd(){
+    setTarefas([...tarefas, input])
+    setInput(' ')
+
   }
 
-  dadosForm(e){
-    let form = this.state.form;
+  const [nome, setNome] = useState('Júnior')
+  return(
 
-    form[e.target.name] = e.target.value
-    this.setState({form: form});
-  }
+    <div>
+        <ul>
+          {tarefas.map(tarefas => (
+            <li>{tarefas}</li>
+          ))}
+        </ul>
+      <input type="text" value={input} onChange={ e => setInput(e.target.value)} />
 
-  
-
-  render(){
-
-    return(
-
-      <div>
-
-         <h2>Login</h2>
-          Nome: 
-          <input type="text" name="nome" value = {this.state.form.nome} onChange={this.dadosForm}> 
-          
-          </input>
-          Email  : 
-          <input  type = "text" name = "email" value = {this.state.form.email} 
-            onChange={this.dadosForm}
-          > 
-          </input>
-         <br/>
-          Senha : <input type = "password" name = "senha" value= {this.state.form.senha} onChange={this.dadosForm} ></input>
-          <br/>
-
-          Sexo: 
-          <select name ="sexo" value={this.state.form.sexo} onChange={this.dadosForm}>
-            <option value="masculino"> Masculino</option>
-            <option value="Feminino"> Feminino</option>
-          </select>
-
-      </div>
-    )
-  }
+    
+      <button type="button" onClick={handleAdd} >Adicionar</button>
+    </div>
+  )
 }
 
-export default App
+export default App; 
