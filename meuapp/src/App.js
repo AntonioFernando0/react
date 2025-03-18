@@ -1,5 +1,5 @@
 // Importação do React e do componente base 'Component' da biblioteca React// 
-import React, {useState, useEffect} from "react"; 
+import React, {useState, useEffect, useMemo} from "react"; 
 
 function App(){
 
@@ -17,6 +17,8 @@ function App(){
   }
 
   const [nome, setNome] = useState('Júnior')
+
+  const totalTarefas = useMemo(()=> tarefas.length, [tarefas])
 
 
   useEffect(() =>{
@@ -39,6 +41,10 @@ function App(){
             <li>{tarefas}</li>
           ))}
         </ul>
+
+        <br/>
+        <strong>Você tem {totalTarefas} tarefas!</strong>
+        <br/>
       <input type="text" value={input} onChange={ e => setInput(e.target.value)} />
 
     
