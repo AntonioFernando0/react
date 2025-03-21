@@ -1,59 +1,30 @@
-// Importação do React e do componente base 'Component' da biblioteca React// 
-import React, {useState, useEffect, useMemo, useCallback} from "react"; 
+import React, {useState} from "react";
+import "./style.css"
 
-function App(){
+  function App(){
 
-  const [tarefas, setTarefas ] = useState([
+    const [numero, setNumero] = useState(0)
+    return(
 
-    'Pagar a conta de luz',
-    'Estudar React Hooks'
-  ])
-  const [input, setInput] = useState(' ')
+       <div  className="titulo">
+        <h1 className="titulo" >Contador de números </h1>
+        <p className="contador">{numero}</p>
 
-  const handleAdd = useCallback(()=> {
-    setTarefas([...tarefas, input]);
-    setInput('');
+        <button onClick={() => setNumero(numero - 1)} className="button" > Diminuir</button>
 
-  }, [input,tarefas])
+        <button onClick={() => setNumero( 0)}className="button" >Zerar</button>
 
-  const [nome, setNome] = useState('Júnior')
+        <button onClick={() => setNumero(numero + 1)} className="button">Aumentar </button>
 
-  const totalTarefas = useMemo(()=> tarefas.length, [tarefas])
+       </div> 
 
-
-  useEffect(() =>{
-    const tarefasStorage = localStorage.getItem('tarefas');
-    if(tarefasStorage){
-      setTarefas(JSON.parse(tarefasStorage))
-    }
-  }, []);
-
-  useEffect(()=> {
-    localStorage.setItem('tarefas', JSON.stringify(tarefas));
-  }, [tarefas])
+    )
+  }
 
 
-  return(
 
-    <div>
-        <ul>
-          {tarefas.map(tarefas => (
-            <li>{tarefas}</li>
-          ))}
-        </ul>
 
-        <br/>
-        <strong>Você tem {totalTarefas} tarefas!</strong>
-        <br/>
-      <input type="text" value={input} onChange={ e => setInput(e.target.value)} />
-
-    
-      <button type="button" onClick={handleAdd} >Adicionar</button>
-    </div>
-  )
-}
-
-export default App; 
+export default App;
 
 
 
