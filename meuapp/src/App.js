@@ -1,9 +1,16 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./style.css"
 
   function App(){
 
     const [numero, setNumero] = useState(0)
+
+   
+      useEffect(() => {
+        alert("Apareci na tela!");
+      }, []);
+    
+    
     return(
 
        <div  className="titulo">
