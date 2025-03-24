@@ -1,38 +1,28 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, use} from "react";
 import "./style.css"
 
-  function App(){
+ function App(){
+  const [numero, setNumero] = useState(0)
+  return(
 
-    const [numero, setNumero] = useState(0)
 
-   
-      useEffect(() => {
-        alert("Apareci na tela!");
-      }, []);
-    
-    
-    return(
-
-       <div  className="titulo">
-        <h1 className="titulo" >Contador de números </h1>
-        <p className="contador">{numero}</p>
-
-        <button onClick={() => setNumero(numero - 1)} className="button" > Diminuir</button>
-
-        <button onClick={() => setNumero( 0)}className="button" >Zerar</button>
-
-        <button onClick={() => setNumero(numero + 1)} className="button">Aumentar </button>
-
-       </div> 
-
-    )
-  }
+    <div className="div" > 
+        <h1 className="titulo"> Contador de numero </h1>
+        <p className="contador"> {numero} </p>
+        <button className="button" onClick={()=> setNumero(numero - 1)}>Diminuir</button>
+        <button className="button" onClick={()=> setNumero(0)}> Zerar</button>
+        <button className="button" onClick={()=> setNumero(numero + 1)}>Aumentar</button>
 
 
 
+    </div>
 
-export default App;
 
+  )
+ }
+
+
+ export default App;
 
 
 

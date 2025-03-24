@@ -3,6 +3,10 @@ body{
     background-color: bisque;
 }
 
+.div{ 
+    text-align: center;
+    justify-content: center;
+}
 
 .titulo{
     text-align: center;
@@ -16,8 +20,11 @@ body{
 .contador{
     font-size: 60px;
     font-weight: bolder;
+    text-align: center;
+    
 }
 .button{
+    align-items: center;
     text-align: center;
     justify-content: center;
     padding: 10px;
