@@ -12,7 +12,7 @@ function Home() {
       <Link to ="/sobre"> Sobre </Link>
 
       <br/>
-      <Link to = "/contato " > Contato </Link>
+      <Link to = "/contato" > Contato </Link>
     </div> 
 
     )
