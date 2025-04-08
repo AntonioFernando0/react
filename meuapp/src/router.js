@@ -3,7 +3,7 @@ import Header from "./components/Header/index.js";
 import Home from './pages/home/Home.js'
 import Sobre from './pages/sobre/index.js'
 import Contato from './pages/Contato/index.js'
-import Erro from '.pages/error/index.js'
+import Erro from './pages/error/index.js'
 
 
 
