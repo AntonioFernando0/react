@@ -1,24 +1,34 @@
+// Importa o componente Link da biblioteca react-router-dom
+// O Link é usado para navegação entre rotas sem recarregar a página
 import { Link } from "react-router-dom";
 
-
-
+// Define o componente funcional Home
 function Home() {
-    return(
-     <div>  
-      <h1>
-        Bem vindo a página Home
+    return (
+        <div>  
+            {/* Título da página */}
+            <h1>
+                Bem vindo à página Home
+            </h1>
 
-      </h1>
-         <br/>   <br/>
-      <Link to ="/sobre"> Sobre </Link>
+            {/* Espaçamento visual com quebras de linha */}
+            <br/> <br/>
 
-      <br/>
-      <Link to = "/contato" > Contato </Link>
-    </div> 
+            {/* Link que leva o usuário para a rota "/sobre" */}
+            <Link to="/sobre">Sobre</Link>
 
-    )
-    
-  }
-  
-  export default Home;
-  
+            <br/>
+
+            {/* Link que leva o usuário para a rota "/contato" */}
+            <Link to="/contato">Contato</Link>
+
+            <hr/>
+
+            {/* Link com parâmetro dinâmico na rota (produto com ID 1234) */}
+            <Link to={"/produto/1234"}>Acessando produto 1234</Link>
+        </div> 
+    );
+}
+
+// Exporta o componente Home para ser usado em outros arquivos
+export default Home;
