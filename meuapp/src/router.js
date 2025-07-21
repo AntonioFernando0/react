@@ -12,6 +12,7 @@ import Erro from './pages/error/index.js';
 import Localidade from './pages/Localidade/index.js';
 import Logos from './pages/imagem/index.js'; // Página onde é exibida a imagem (logo)
 import Produto from './pages/produtos/index.js'; // Página que exibe produtos dinamicamente por ID
+import Favoritos from './pages/favoritos/index.js'; // Página que exibe os filmes favoritos
 
 // Função principal que define as rotas da aplicação
 function RouterApp(){
@@ -31,6 +32,9 @@ function RouterApp(){
                 {/* Rota para a página Sobre */}
                 <Route path="/sobre" element={<Sobre />} />
 
+                {/* Rota que definir os favoritos*/}
+                <Route path='/favoritos'element={ <Favoritos/> } />
+
                 {/* Rota para a página Contato (ajustar para minúsculo se desejar padrão) */}
                 <Route path='/contato' element={<Contato />} />
 
@@ -43,6 +47,8 @@ function RouterApp(){
                 {/* Rota para exibir uma imagem (logo) */}
                 <Route path='/img' element={<Logos />} />
 
+                
+
                 {/* Rota coringa (pega qualquer URL não definida acima) e exibe a página de erro */}
                 <Route path='*' element={<Erro />} />
 
@@ -54,3 +60,4 @@ function RouterApp(){
 
 // Exporta o componente para ser utilizado no index.js principal da aplicação
 export default RouterApp;
+
